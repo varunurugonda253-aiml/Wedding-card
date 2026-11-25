@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Srikanth and Supriya//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:srikanth-supriya-wedding-2026@invitation
+DTSTAMP:20261125T100000Z
+DTSTART:20261129T044500Z
+DTEND:20261129T083000Z
+SUMMARY:Srikanth & Supriya - Wedding Ceremony
+LOCATION:P.R.M.R. Gardens\, Tekumatla\, Chityal Mandal\, Jayashankar Bhupalpally\, Telangana
+DESCRIPTION:Traditional Telugu wedding ceremony of Chi. Srikanth and Chi. La. Sow. Supriya.\nPushyami Nakshatram\, Dhanur Lagnam.\nMuhurtham: 10:15 AM IST.\nLunch follows the ceremony.\n\nInvited by: Smt. & Sri. Jambula Bhagyalakshmi - Rajamallu.\nContact: 9701127204\, 9505514837
+END:VEVENT
+END:VCALENDAR

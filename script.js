@@ -823,8 +823,8 @@
       let l = (1 - fa($(o, t, r))) * 100 - fa($(o, i, a)) * 105;
       let u = o >= t - 0.025 && o <= a + 0.015;
       if (e === "opening") { l = 0; u = o < 0.195; }
-      if (e === "final") { l = (1 - fa($(o, t, r))) * 100; u = o >= t - 0.025; }
-      if (reduced) { u = o >= t && (e === "final" || o < a); l = 0; }
+      if (e === "couple") { l = (1 - fa($(o, t, r))) * 100; u = o >= t - 0.025; }
+      if (reduced) { u = o >= t && (e === "couple" || o < a); l = 0; }
       g(c, "data-active", u);
       h(c, "visibility", u ? "visible" : "hidden");
       let d = u && Math.abs(l) < 15;
@@ -843,15 +843,15 @@
       z("opening", 0, 0, 0.15, 0.255, e);
       z("gate", 0.105, 0.175, 0.255, 0.315, e);
       z("events", 0.265, 0.315, 0.412, 0.468, e);
-      z("couple", 0.413, 0.462, 0.516, 0.573, e);
-      z("portrait", 0.516, 0.575, 0.64, 0.69, e);
-      z("venue", 0.645, 0.69, 0.735, 0.791, e);
-      z("blessing", 0.744, 0.792, 0.83, 0.878, e);
-      z("memories", 0.837, 0.877, 0.932, 0.978, e);
-      z("final", 0.93, 0.99, 1, 1.01, e);
+      z("portrait", 0.413, 0.462, 0.516, 0.573, e);
+      z("venue", 0.516, 0.575, 0.64, 0.69, e);
+      z("blessing", 0.645, 0.69, 0.735, 0.791, e);
+      z("memories", 0.744, 0.792, 0.83, 0.878, e);
+      z("final", 0.837, 0.877, 0.932, 0.978, e);
+      z("couple", 0.93, 0.99, 1, 1.01, e);
 
       let r = "opening";
-      for (let e of ["opening", "gate", "events", "couple", "portrait", "venue", "blessing", "memories", "final"]) {
+      for (let e of ["opening", "gate", "events", "portrait", "venue", "blessing", "memories", "final", "couple"]) {
         if (p.has(e) && Math.abs(f[e]) <= 50) r = e;
       }
       ea.presence = Math.max(0, 1 - Math.abs(f[r] ?? 0) / 100);
@@ -860,7 +860,6 @@
         window.dispatchEvent(new Event(ta));
       }
 
-      R("blessing-controls", 0, 0, 1, 0, $(e, 0.47, 0.49));
       R("opening-title", 0, t ? 0 : -$(e, 0.012, 0.115) * 83, 1, 0, 1 - $(e, 0.055, 0.11));
       R("opening-temple", 0, t ? 0 : 85 - $(e, 0, 0.235) * 225, t ? 1 : 0.91 + $(e, 0, 0.19) * 0.28);
       R("opening-hint", 0, 0, 1, 0, 1 - $(e, 0, 0.035));
@@ -881,27 +880,32 @@
         h(o["pip-two"], "opacity", (0.35 + t * 0.65).toFixed(4));
       }
 
-      R("couple-temple", 0, t ? 0 : 16 - $(e, 0.437, 0.54) * 35, 1 + $(e, 0.44, 0.53) * 0.1);
-      R("illustrated-couple", 0, t ? 0 : 55 - $(e, 0.44, 0.525) * 72, t ? 1 : 0.8 + $(e, 0.44, 0.525) * 0.23);
-      R("portrait-intro", 0, t ? 0 : 7 - $(e, 0.566, 0.64) * 10, 1, 0, $(e, 0.551, 0.582));
-      R("gold-portrait", 0, t ? 0 : 43 - $(e, 0.572, 0.625) * 48, t ? 1 : 0.9 + $(e, 0.58, 0.64) * 0.1);
-      R("temple-procession", 0, t ? 0 : 45 - $(e, 0.61, 0.665) * 61, 1.1);
-      R("venue-copy", 0, t ? 0 : 16 - $(e, 0.674, 0.737) * 29, 1, 0, $(e, 0.67, 0.695));
-      R("venue-temple", 0, t ? 0 : 35 - $(e, 0.674, 0.745) * 47, 1);
-      R("blessing-copy", 0, t ? 0 : 14 - $(e, 0.773, 0.833) * 21, 1, 0, $(e, 0.77, 0.795));
-      R("countdown-heading", 0, t ? 0 : -$(e, 0.885, 0.927) * 53, 1, 0, 1 - $(e, 0.912, 0.93));
-      R("memories-heading", 0, t ? 0 : 17 - $(e, 0.886, 0.932) * 25, 1, 0, $(e, 0.884, 0.903) * (1 - $(e, 0.934, 0.95)));
+      R("portrait-intro", 0, t ? 0 : 7 - $(e, 0.463, 0.537) * 10, 1, 0, $(e, 0.448, 0.479));
+      R("gold-portrait", 0, t ? 0 : 43 - $(e, 0.469, 0.522) * 48, t ? 1 : 0.9 + $(e, 0.477, 0.537) * 0.1);
+      R("temple-procession", 0, t ? 0 : 45 - $(e, 0.507, 0.562) * 61, 1.1);
+
+      R("venue-copy", 0, t ? 0 : 16 - $(e, 0.559, 0.622) * 29, 1, 0, $(e, 0.555, 0.58));
+      R("venue-temple", 0, t ? 0 : 35 - $(e, 0.559, 0.63) * 47, 1);
+
+      R("blessing-copy", 0, t ? 0 : 14 - $(e, 0.674, 0.734) * 21, 1, 0, $(e, 0.671, 0.696));
+
+      R("countdown-heading", 0, t ? 0 : -$(e, 0.792, 0.834) * 53, 1, 0, 1 - $(e, 0.819, 0.837));
+      R("memories-heading", 0, t ? 0 : 17 - $(e, 0.793, 0.839) * 25, 1, 0, $(e, 0.791, 0.81) * (1 - $(e, 0.841, 0.857)));
 
       if (p.has("memories")) {
-        let n = fa($(e, 0.892, 0.936));
-        let r = fa($(e, 0.936, 0.974));
+        let n = fa($(e, 0.799, 0.843));
+        let r = fa($(e, 0.843, 0.881));
         [[-36, 28, -19], [35, 37, 17], [-24, 62, 12], [28, 70, -14], [4, 83, -8]].forEach(([i, a, o], s) => {
-          R(`memory-${s}`, t ? 0 : i * (1 - n) + Math.sin(s * 2) * r * 60, t ? 0 : a * (1 - n) + 14 * n - r * (50 + s * 12), t ? 0.4 : 0.58 + n * 0.15 - r * 0.33, o * (1 - n) + s * 6 * n - r * o, $(e, 0.881 + s * 0.003, 0.9 + s * 0.003) * (1 - r));
+          R(`memory-${s}`, t ? 0 : i * (1 - n) + Math.sin(s * 2) * r * 60, t ? 0 : a * (1 - n) + 14 * n - r * (50 + s * 12), t ? 0.4 : 0.58 + n * 0.15 - r * 0.33, o * (1 - n) + s * 6 * n - r * o, $(e, 0.788 + s * 0.003, 0.807 + s * 0.003) * (1 - r));
         });
       }
 
-      R("final-landscape", 0, t ? 0 : 12 - $(e, 0.94, 1) * 12, 1.02);
-      R("final-words", 0, t ? 0 : 12 - $(e, 0.96, 0.995) * 12, 1, 0, $(e, 0.955, 0.985));
+      R("final-landscape", 0, t ? 0 : 12 - $(e, 0.847, 0.907) * 12, 1.02);
+      R("final-words", 0, t ? 0 : 12 - $(e, 0.867, 0.902) * 12, 1, 0, $(e, 0.862, 0.892));
+
+      R("blessing-controls", 0, 0, 1, 0, $(e, 0.965, 0.985));
+      R("couple-temple", 0, t ? 0 : 16 - $(e, 0.935, 1) * 35, 1 + $(e, 0.935, 1) * 0.1);
+      R("illustrated-couple", 0, t ? 0 : 55 - $(e, 0.938, 0.99) * 72, t ? 1 : 0.8 + $(e, 0.938, 0.99) * 0.23);
     };
 
     function V(e) {

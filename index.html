@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Supriya &amp; Srikanth — A Beautiful Beginning</title>
+  <title>Srikanth &amp; Supriya — A Beautiful Beginning</title>
   <meta name="description"
-    content="With the blessings of the Almighty and our elders, join us for the auspicious wedding of Supriya &amp; Srikanth. 29 November 2026, P.R.M.R. Gardens, Tekumatla." />
+    content="With the blessings of the Almighty and our elders, join us for the auspicious wedding of Srikanth &amp; Supriya. 29 November 2026, P.R.M.R. Gardens, Tekumatla." />
   <link rel="shortcut icon" href="favicon.svg" />
   <link rel="icon" href="favicon.svg" />
   <link rel="stylesheet" href="style.css" />
@@ -86,6 +86,260 @@
         gap: 5px;
       }
     }
+
+    /* Auto Scroll Toggle Button */
+    .autoscroll-toggle-btn {
+      position: fixed;
+      top: 18px;
+      right: 120px;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff5e7f2;
+      border: 1px solid #c9a86a;
+      border-radius: 9999px;
+      padding: 7px 13px 7px 11px;
+      color: var(--wine, #55313c);
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(90, 50, 20, 0.12);
+      transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      font-family: Jost, sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      user-select: none;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+    .autoscroll-toggle-btn:hover {
+      transform: translateY(-2px);
+      border-color: #ab8644;
+      box-shadow: 0 6px 18px rgba(171, 134, 68, 0.25);
+    }
+    .autoscroll-toggle-btn.is-active {
+      background: #55313c;
+      color: #fff6e5;
+      border-color: #ab8644;
+      box-shadow: 0 0 0 2px rgba(171, 134, 68, 0.35), 0 6px 18px rgba(85, 49, 60, 0.3);
+    }
+    .autoscroll-icon-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+    }
+    .autoscroll-toggle-btn .autoscroll-icon-play {
+      display: block;
+    }
+    .autoscroll-toggle-btn .autoscroll-icon-pause {
+      display: none;
+    }
+    .autoscroll-toggle-btn.is-active .autoscroll-icon-play {
+      display: none;
+    }
+    .autoscroll-toggle-btn.is-active .autoscroll-icon-pause {
+      display: block;
+      color: #ffd27a;
+    }
+    @media (max-width: 760px) {
+      .autoscroll-toggle-btn {
+        top: 13px;
+        right: 85px;
+        padding: 6px 10px 6px 8px;
+        font-size: 9.5px;
+        gap: 4px;
+      }
+    }
+
+    /* Open Wedding Invitation Button in Hero Scene */
+    .open-invitation-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #b3801f, #d9a43a 55%, #a36d17);
+      color: #fffaf0;
+      border: 1px solid rgba(255, 230, 160, 0.5);
+      border-radius: 9999px;
+      padding: 12px 28px;
+      font-family: Jost, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 0 8px 26px rgba(138, 90, 18, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      animation: openBtnPulse 2.8s ease-in-out infinite;
+    }
+    .open-invitation-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(138, 90, 18, 0.45);
+      filter: brightness(1.06);
+    }
+    .open-invitation-btn svg {
+      animation: floatDown 1.4s ease-in-out infinite alternate;
+    }
+    .opening-subhint {
+      display: block;
+      margin-top: 8px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: #7d6542;
+      opacity: 0.85;
+      font-family: Jost, sans-serif;
+    }
+    @keyframes openBtnPulse {
+      0%, 100% {
+        box-shadow: 0 8px 24px rgba(138, 90, 18, 0.35);
+      }
+      50% {
+        box-shadow: 0 8px 30px rgba(138, 90, 18, 0.55), 0 0 0 6px rgba(217, 164, 58, 0.22);
+      }
+    }
+    @keyframes floatDown {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(4px); }
+    }
+    @media (max-width: 760px) {
+      .open-invitation-btn {
+        padding: 10px 22px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+    }
+
+    /* Gate Scene Groom & Bride Typography */
+    .gate-names-wrap {
+      margin: 18px 0 14px;
+    }
+    .invitation-words h3.gate-groom-name,
+    .invitation-words h3.gate-bride-name {
+      color: var(--wine, #55313c);
+      font-family: Cormorant, Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(30px, 3.8vw, 56px);
+      line-height: 1.12;
+      margin: 0;
+    }
+    .gate-groom-parents {
+      font-family: Jost, Arial, sans-serif;
+      font-size: clamp(13px, 1.35vw, 15.5px);
+      color: #866b3c;
+      margin: 5px 0 10px;
+      line-height: 1.45;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+    }
+    .gate-amp {
+      color: #a58246;
+      font-family: Cormorant, Georgia, serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-style: italic;
+      line-height: 1;
+      margin: 2px 0 8px;
+    }
+    .gate-amp span {
+      display: inline-block;
+    }
+
+    /* Telugu Scene Styling */
+    .telugu-invitation {
+      position: absolute;
+      top: 14%;
+      left: 14%;
+      width: 72%;
+      text-align: center;
+      z-index: 2;
+      color: #7f5a39;
+      font-family: 'Noto Serif Telugu', serif;
+    }
+    .telugu-title {
+      font-family: 'Noto Serif Telugu', serif;
+      color: var(--wine, #55313c);
+      font-size: clamp(22px, 3vw, 36px);
+      margin: 6px 0 10px;
+    }
+    .telugu-line {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: 13px;
+      color: #a98148;
+      margin: 3px 0;
+      letter-spacing: 0.05em;
+    }
+    .telugu-name {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: clamp(20px, 2.6vw, 30px);
+      color: var(--wine, #55313c);
+      margin: 2px 0 3px;
+    }
+    .telugu-parents {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: clamp(12px, 1.35vw, 15px);
+      color: #7f5a39;
+      margin: 3px 0 8px;
+      line-height: 1.5;
+    }
+    .telugu-weds {
+      font-size: 16px;
+      color: #c94a5e;
+      margin: 3px 0;
+    }
+    .telugu-details p {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: clamp(12px, 1.3vw, 14px);
+      line-height: 1.6;
+      margin: 2px 0;
+    }
+    .telugu-host {
+      font-family: 'Noto Serif Telugu', serif;
+      font-size: clamp(13px, 1.4vw, 15px);
+      font-weight: 700;
+      color: var(--wine, #55313c);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .gate-names-wrap {
+        margin: 12px 0 8px;
+      }
+      .invitation-words h3.gate-groom-name,
+      .invitation-words h3.gate-bride-name {
+        font-size: 30px;
+        line-height: 1.1;
+      }
+      .gate-groom-parents {
+        font-size: 11.5px;
+        margin: 3px 0 6px;
+      }
+      .gate-amp {
+        font-size: 20px;
+        margin: 2px 0 5px;
+      }
+      .couple-scene {
+        z-index: 10 !important;
+      }
+      .telugu-invitation {
+        top: 15%;
+        left: 8%;
+        width: 84%;
+      }
+      .telugu-title {
+        font-size: 20px;
+        margin: 4px 0 6px;
+      }
+      .telugu-name {
+        font-size: 18px;
+      }
+      .telugu-parents {
+        font-size: 11px;
+      }
+      .telugu-details p {
+        font-size: 11.5px;
+        line-height: 1.5;
+      }
+    }
   </style>
 
 </head>
@@ -94,6 +348,22 @@
 
   <!-- Background Wedding Music -->
   <audio id="wedding-audio" src="wedding-music.mp3" loop preload="auto"></audio>
+
+  <!-- Auto Scroll Play/Pause Toggle Button -->
+  <button id="autoscroll-toggle-btn" class="autoscroll-toggle-btn" type="button" aria-label="Toggle automatic scrolling" aria-pressed="false" title="Auto Scroll is OFF (Click to start presentation)">
+    <span class="autoscroll-icon-box">
+      <!-- Play Icon -->
+      <svg class="autoscroll-icon-play" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="6 3 20 12 6 21 6 3"></polygon>
+      </svg>
+      <!-- Pause Icon -->
+      <svg class="autoscroll-icon-pause" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="6" y="4" width="4" height="16"></rect>
+        <rect x="14" y="4" width="4" height="16"></rect>
+      </svg>
+    </span>
+    <span id="autoscroll-state-text">AUTO SCROLL</span>
+  </button>
 
   <!-- Mic Audio Toggle Button -->
   <button id="music-toggle-btn" class="music-toggle-btn" type="button" aria-label="Toggle background music" aria-pressed="false" title="Music: OFF (Click to turn ON)">
@@ -121,7 +391,7 @@
     <div class="film-loader" aria-hidden="false"><span class="loader-monogram">s<em>&amp;</em>s</span>
       <div></div><span class="eyebrow">UNFOLDING OUR CELEBRATION</span>
     </div>
-    <main class="film-stage" aria-label="Supriya and Srikanth's scrolling wedding invitation">
+    <main class="film-stage" aria-label="Srikanth and Supriya's scrolling wedding invitation">
       <div class="film-scene opening-scene" data-scene="opening">
         <div class="opening-glow"></div>
         <div class="opening-atmosphere" data-layer="opening-atmosphere" aria-hidden="true">
@@ -168,18 +438,23 @@
         </div>
         <div class="opening-title" data-layer="opening-title">
           <p class="eyebrow">WITH THE BLESSINGS OF THE ALMIGHTY &amp; OUR ELDERS</p>
-          <h1>Supriya<span>&amp;</span>Srikanth</h1>
+          <h1>Srikanth<span>&amp;</span>Supriya</h1>
           <p class="opening-date">29 November 2026</p>
           <p class="eyebrow tiny">ARE GETTING MARRIED</p>
         </div><img class="opening-temple art" data-layer="opening-temple" src="art/temple.webp"
           alt="An illustrated South Indian temple rises into the sky" fetchPriority="high" />
-        <div class="opening-hint" data-layer="opening-hint"><span>Scroll to unfold our celebration</span><svg
-            xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-arrow-down" aria-hidden="true">
-            <path d="M12 5v14"></path>
-            <path d="m19 12-7 7-7-7"></path>
-          </svg></div>
+        <div class="opening-hint" data-layer="opening-hint">
+          <button id="open-invitation-btn" class="open-invitation-btn" type="button" aria-label="Open wedding invitation and start presentation">
+            <span>OPEN WEDDING INVITATION</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-arrow-down" aria-hidden="true">
+              <path d="M12 5v14"></path>
+              <path d="m19 12-7 7-7-7"></path>
+            </svg>
+          </button>
+          <span class="opening-subhint">or scroll to explore manually</span>
+        </div>
       </div>
 
       <!-- Gate Scene: The Invitation -->
@@ -190,9 +465,14 @@
           <h2><em>You're invited</em></h2>
           <p>With the blessings of the Almighty and our elders,<br />we cordially invite you to the auspicious wedding
             of</p>
-          <h3>Chi. La. Sow. Supriya <span>&amp;</span> Chi. Srikanth</h3>
+          <div class="gate-names-wrap">
+            <h3 class="gate-groom-name">Chi. Srikanth</h3>
+            <p class="gate-groom-parents">S/o Sri. Jambula Rajamallu &amp; Smt. Jambula Bhagyalakshmi</p>
+            <div class="gate-amp"><span>&amp;</span></div>
+            <h3 class="gate-bride-name">Chi. La. Sow. Supriya</h3>
+          </div>
           <div class="fine-rule"></div>
-          <p>Only Daughter of Smt. &amp; Sri. Challa Sridevi – Sadaiah</p><span class="eyebrow">29 NOVEMBER 2026 ·
+          <span class="eyebrow">29 NOVEMBER 2026 ·
             P.R.M.R. GARDENS, TEKUMATLA</span>
         </div><img class="gate-frame frame-art art" data-layer="gate-frame" src="art/gate.webp"
           alt="Carved wedding gateway with jasmine garlands, banana leaves and brass lamps" />
@@ -228,8 +508,8 @@
                 <p>Tekumatla, Chityal Mandal<br />Jayashankar Bhupalpally, Telangana</p>
                 <p class="event-short">Join us at P.R.M.R. Gardens for the wedding celebration and traditional lunch.
                 </p><a class="gold-button"
-                  href="https://www.google.com/maps/search/P.R.M.R.+Gardens+Tekumatla+Telangana" target="_blank"
-                  rel="noopener">Open in Maps <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                  href="https://www.google.com/maps/search/?api=1&query=18.384663,79.629141" target="_blank"
+                  rel="noopener">Open in Google Maps <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
                     <path d="M7 7h10v10"></path>
@@ -242,35 +522,17 @@
         <div class="event-pips"><span data-layer="pip-one"></span><span data-layer="pip-two"></span></div>
       </section>
 
-      <!-- Couple Scene: Bride & Groom -->
-      <section class="film-scene couple-scene" data-scene="couple" aria-label="The bride and groom">
-        <div class="couple-sky"></div><img class="couple-temple temple-side left art" src="art/temple.webp"
-          alt="" /><img class="couple-temple temple-side right art" src="art/temple.webp" alt="" /><img
-          class="couple-temple main-temple art" data-layer="couple-temple" src="art/temple.webp"
-          alt="Temple architecture behind the wedding couple" />
-        <div class="couple-heading" data-layer="couple-heading"><span class="eyebrow">A LITTLE DESTINY. A LOT OF
-            LOVE.</span>
-          <h2>The bride <em>&amp;</em> groom</h2>
-        </div><img class="illustrated-couple art" data-layer="illustrated-couple" src="art/couple.webp"
-          alt="An illustrated South Indian bride and groom holding wedding garlands" />
-        <div class="blessing-controls" data-layer="blessing-controls"><span class="eyebrow">PELLIKODUKU &amp;
-            PELLIKUTURU</span><button class="gold-button akshantalu-button">Shower akshantalu <span
-              aria-hidden="true">✦</span></button>
-          <p class="tap-hint">Tap anywhere to bless the couple</p>
-        </div>
-      </section>
-
-      <!-- Portrait Scene: Meet Supriya & Srikanth -->
+      <!-- Portrait Scene: Meet Srikanth & Supriya -->
       <section class="film-scene portrait-scene plum-scene" data-scene="portrait"
-        aria-label="Meet Supriya and Srikanth">
+        aria-label="Meet Srikanth and Supriya">
         <div class="arch-paper"></div><img class="plum-frame frame-art art" src="art/plum.webp"
           alt="Plum and antique gold wedding arch with lamps and lotus ornament" />
         <div class="portrait-intro" data-layer="portrait-intro"><span class="eyebrow">MEET THE BRIDE &amp; GROOM</span>
-          <h2>Supriya <em>&amp;</em> Srikanth</h2>
+          <h2>Srikanth <em>&amp;</em> Supriya</h2>
           <p>Two hearts united by destiny and blessed by family.</p>
         </div>
         <figure class="gold-portrait" data-layer="gold-portrait" data-tilt="10"><img src="images/couple.webp"
-            alt="Supriya and Srikanth" style="object-position: 60% 15%;" /></figure>
+            alt="Srikanth and Supriya" style="object-position: 60% 15%;" /></figure>
         <div class="temple-procession" data-layer="temple-procession"><img class="procession-temple temple-0"
             src="art/temple.webp" alt="" /><img class="procession-temple temple-1" src="art/temple.webp" alt="" /><img
             class="procession-temple temple-2" src="art/temple.webp" alt="" /><img class="procession-temple temple-3"
@@ -285,8 +547,8 @@
           <p>Tekumatla, Chityal Mandal<br />Jayashankar Bhupalpally, Telangana</p>
           <div class="fine-rule"></div>
           <p>Sunday, 29 November 2026<br />Muhurtham · 10:15 AM</p><a class="gold-button wine-button"
-            href="https://www.google.com/maps/search/P.R.M.R.+Gardens+Tekumatla+Telangana" target="_blank"
-            rel="noopener">Open in Maps <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+            href="https://www.google.com/maps/search/?api=1&query=18.384663,79.629141" target="_blank"
+            rel="noopener">Open in Google Maps <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15"
               viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
               <path d="M7 7h10v10"></path>
@@ -332,6 +594,7 @@
           <div class="telugu-content">
             <p class="telugu-line">వరుడు</p>
             <h3 class="telugu-name">చి. శ్రీకాంత్</h3>
+            <p class="telugu-parents">శ్రీ జంబుల రాజమల్లు మరియు శ్రీమతి జంబుల భాగ్యలక్ష్మి గార్ల కుమారుడు</p>
             <p class="telugu-weds">❤</p>
             <p class="telugu-line">వధువు</p>
             <h3 class="telugu-name">చి. ల. సౌ. సుప్రియ</h3>
@@ -372,15 +635,15 @@
         </div>
         <div class="floating-memories">
           <figure class="memory memory-0" data-layer="memory-0"><img src="images/memory-0.webp"
-              alt="Supriya and Srikanth" style="object-position: 58% center;" /></figure>
+              alt="Srikanth and Supriya" style="object-position: 58% center;" /></figure>
           <figure class="memory memory-1" data-layer="memory-1"><img src="images/memory-1.webp"
-              alt="Supriya and Srikanth" style="object-position: 65% center;" /></figure>
+              alt="Srikanth and Supriya" style="object-position: 65% center;" /></figure>
           <figure class="memory memory-2" data-layer="memory-2"><img src="images/memory-2.webp"
-              alt="Supriya and Srikanth" style="object-position: 55% center;" /></figure>
+              alt="Srikanth and Supriya" style="object-position: 55% center;" /></figure>
           <figure class="memory memory-3" data-layer="memory-3"><img src="images/memory-3.webp"
-              alt="Supriya and Srikanth" style="object-position: center 25%;" /></figure>
+              alt="Srikanth and Supriya" style="object-position: center 25%;" /></figure>
           <figure class="memory memory-4" data-layer="memory-4"><img src="images/memory-4.webp"
-              alt="Supriya and Srikanth" style="object-position: 60% center;" /></figure>
+              alt="Srikanth and Supriya" style="object-position: 60% center;" /></figure>
         </div>
       </section>
 
@@ -391,7 +654,7 @@
         <div class="final-words" data-layer="final-words"><span class="eyebrow">TOGETHER IS A BEAUTIFUL PLACE TO
             BE</span>
           <h2>Our forever<br />begins <em>with you.</em></h2>
-          <p>Supriya <em>&amp;</em> Srikanth</p><span class="eyebrow">29 NOVEMBER 2026 · P.R.M.R. GARDENS,
+          <p>Srikanth <em>&amp;</em> Supriya</p><span class="eyebrow">29 NOVEMBER 2026 · P.R.M.R. GARDENS,
             TEKUMATLA</span><a class="final-save" href="srikanth-supriya-wedding.ics" download="">Save the date <svg
               xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -422,6 +685,24 @@
         </div>
         <p class="tap-hint final-hint" aria-hidden="true">Tap anywhere to scatter lotus petals</p>
       </section>
+
+      <!-- Couple Scene: Bride & Groom (Final blessing section) -->
+      <section class="film-scene couple-scene" data-scene="couple" aria-label="The bride and groom">
+        <div class="couple-sky"></div><img class="couple-temple temple-side left art" src="art/temple.webp"
+          alt="" /><img class="couple-temple temple-side right art" src="art/temple.webp" alt="" /><img
+          class="couple-temple main-temple art" data-layer="couple-temple" src="art/temple.webp"
+          alt="Temple architecture behind the wedding couple" />
+        <div class="couple-heading" data-layer="couple-heading"><span class="eyebrow">A LITTLE DESTINY. A LOT OF
+            LOVE.</span>
+          <h2>The bride <em>&amp;</em> groom</h2>
+        </div><img class="illustrated-couple art" data-layer="illustrated-couple" src="art/couple.webp"
+          alt="An illustrated South Indian bride and groom holding wedding garlands" />
+        <div class="blessing-controls" data-layer="blessing-controls"><span class="eyebrow">PELLIKODUKU &amp;
+            PELLIKUTURU</span><button class="gold-button akshantalu-button">Shower akshantalu <span
+              aria-hidden="true">✦</span></button>
+          <p class="tap-hint">Tap anywhere to bless the couple</p>
+        </div>
+      </section>
     </main><canvas class="celebration-layer" aria-hidden="true"></canvas>
     <div class="scroll-track" aria-hidden="true"></div><a class="film-monogram" href="#invitation-top"
       aria-label="Return to the beginning">s<em>&amp;</em>s</a>
@@ -443,7 +724,7 @@
           <path d="m6 6 12 12" />
         </svg>
       </button>
-      <span class="eyebrow">SUPRIYA &amp; SRIKANTH · THE WEDDING</span>
+      <span class="eyebrow">SRIKANTH &amp; SUPRIYA · THE WEDDING</span>
       <h2 class="dialog-title" id="dialog-title"></h2>
       <p class="dialog-description" id="dialog-copy"></p>
       <p class="dialog-date" id="dialog-datetime"></p>
@@ -521,6 +802,233 @@
       window.addEventListener('click', startOnFirstGesture, { once: true });
       window.addEventListener('touchstart', startOnFirstGesture, { once: true, passive: true });
       window.addEventListener('scroll', startOnFirstGesture, { once: true, passive: true });
+    })();
+  </script>
+
+  <!-- Cinematic Auto Scroll Controller Script -->
+  <script>
+    (() => {
+      const autoScrollBtn = document.getElementById('autoscroll-toggle-btn');
+      const openInvitationBtn = document.getElementById('open-invitation-btn');
+      const autoScrollText = document.getElementById('autoscroll-state-text');
+
+      // Scroll progress anchors for each cinematic section
+      const SECTION_PROGRESS = [
+        0.0,    // 0: Welcome / Opening
+        0.21,   // 1: Gate (You're invited)
+        0.36,   // 2: Events (Ceremony & Venue)
+        0.48,   // 3: Portrait (Meet Srikanth & Supriya)
+        0.60,   // 4: Venue (P.R.M.R. Gardens)
+        0.71,   // 5: Blessing (Will you join us)
+        0.80,   // 6: Memories (Counting the days & photos)
+        0.89,   // 7: Final (Our forever begins with you & RSVP)
+        1.0     // 8: Couple (Pellikoduku & Pellikuturu, akshantalu shower)
+      ];
+
+      const SECTION_DWELL_MS = 3000;       // Dwell 3 seconds per section
+      const TRANSITION_DURATION_MS = 1600; // Silky smooth 1.6s ease-in-out transition
+
+      let isAutoScrolling = false;
+      let isAnimating = false;
+      let dwellTimer = null;
+      let animFrameId = null;
+      let currentSectionIndex = 0;
+      let isProgrammaticScroll = false;
+
+      function getMaxScroll() {
+        return Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      }
+
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function updateButtonUI(active) {
+        if (!autoScrollBtn) return;
+        if (active) {
+          autoScrollBtn.classList.add('is-active');
+          autoScrollBtn.setAttribute('aria-pressed', 'true');
+          autoScrollBtn.setAttribute('title', 'Auto Scroll is ON (Click to pause)');
+          if (autoScrollText) autoScrollText.textContent = 'PAUSE';
+        } else {
+          autoScrollBtn.classList.remove('is-active');
+          autoScrollBtn.setAttribute('aria-pressed', 'false');
+          autoScrollBtn.setAttribute('title', 'Auto Scroll is OFF (Click to start presentation)');
+          if (autoScrollText) autoScrollText.textContent = 'AUTO SCROLL';
+        }
+      }
+
+      function clearAllTimers() {
+        if (dwellTimer) {
+          clearTimeout(dwellTimer);
+          dwellTimer = null;
+        }
+        if (animFrameId) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = null;
+        }
+        isAnimating = false;
+      }
+
+      function stopAutoScroll(notifyUI = true) {
+        isAutoScrolling = false;
+        clearAllTimers();
+        isProgrammaticScroll = false;
+        if (notifyUI) updateButtonUI(false);
+      }
+
+      function scrollToTarget(targetY, duration, onComplete) {
+        clearAllTimers();
+        isAnimating = true;
+        isProgrammaticScroll = true;
+
+        const startY = window.scrollY;
+        const distance = targetY - startY;
+        const startTime = performance.now();
+
+        if (Math.abs(distance) < 2) {
+          window.scrollTo(0, targetY);
+          isAnimating = false;
+          setTimeout(() => {
+            isProgrammaticScroll = false;
+            if (onComplete) onComplete();
+          }, 30);
+          return;
+        }
+
+        function step(now) {
+          if (!isAutoScrolling) {
+            isAnimating = false;
+            isProgrammaticScroll = false;
+            return;
+          }
+
+          const elapsed = now - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          const eased = easeInOutCubic(progress);
+          const currentY = startY + distance * eased;
+
+          isProgrammaticScroll = true;
+          window.scrollTo(0, currentY);
+
+          if (progress < 1) {
+            animFrameId = requestAnimationFrame(step);
+          } else {
+            window.scrollTo(0, targetY);
+            isAnimating = false;
+            setTimeout(() => {
+              isProgrammaticScroll = false;
+              if (onComplete) onComplete();
+            }, 60);
+          }
+        }
+
+        animFrameId = requestAnimationFrame(step);
+      }
+
+      function scheduleNextSection() {
+        if (!isAutoScrolling) return;
+
+        // If reached the final section, stop automatically
+        if (currentSectionIndex >= SECTION_PROGRESS.length - 1) {
+          stopAutoScroll(true);
+          return;
+        }
+
+        // Wait 3 seconds at current section before moving to next
+        dwellTimer = setTimeout(() => {
+          if (!isAutoScrolling) return;
+          currentSectionIndex++;
+          const targetY = Math.round(SECTION_PROGRESS[currentSectionIndex] * getMaxScroll());
+          scrollToTarget(targetY, TRANSITION_DURATION_MS, () => {
+            scheduleNextSection();
+          });
+        }, SECTION_DWELL_MS);
+      }
+
+      function startAutoScroll(fromIndex) {
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          return;
+        }
+
+        clearAllTimers();
+        isAutoScrolling = true;
+        updateButtonUI(true);
+
+        const maxScroll = getMaxScroll();
+        const currentProgress = window.scrollY / maxScroll;
+
+        if (typeof fromIndex === 'number') {
+          currentSectionIndex = fromIndex;
+        } else {
+          // Identify nearest upcoming section based on current scroll position
+          let nextIdx = SECTION_PROGRESS.findIndex(p => p > currentProgress + 0.035);
+          if (nextIdx === -1) {
+            currentSectionIndex = 1; // Start from gate section if already at bottom
+          } else {
+            currentSectionIndex = nextIdx;
+          }
+        }
+
+        const targetY = Math.round(SECTION_PROGRESS[currentSectionIndex] * maxScroll);
+        scrollToTarget(targetY, TRANSITION_DURATION_MS, () => {
+          scheduleNextSection();
+        });
+      }
+
+      // User interaction listener - pause automatic scrolling immediately on user action
+      function handleUserInterrupt() {
+        if (isProgrammaticScroll) return; // Do not interrupt on programmatic smooth scroll
+        if (isAutoScrolling) {
+          stopAutoScroll(true);
+        }
+      }
+
+      window.addEventListener('wheel', handleUserInterrupt, { passive: true });
+      window.addEventListener('touchstart', handleUserInterrupt, { passive: true });
+      window.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('#autoscroll-toggle-btn, #open-invitation-btn')) return;
+        handleUserInterrupt();
+      }, { passive: true });
+
+      window.addEventListener('keydown', (e) => {
+        if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(e.key)) {
+          handleUserInterrupt();
+        }
+      }, { passive: true });
+
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('a, button:not(#autoscroll-toggle-btn):not(#open-invitation-btn):not(#music-toggle-btn)')) {
+          handleUserInterrupt();
+        }
+      });
+
+      // "OPEN WEDDING INVITATION" button in Hero scene starts automatic cinematic scroll
+      if (openInvitationBtn) {
+        openInvitationBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          startAutoScroll(1);
+        });
+      }
+
+      // Auto Scroll Play/Pause Toggle button in top bar
+      if (autoScrollBtn) {
+        autoScrollBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (isAutoScrolling) {
+            stopAutoScroll(true);
+          } else {
+            startAutoScroll();
+          }
+        });
+      }
+
+      // Pause when browser tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && isAutoScrolling) {
+          stopAutoScroll(true);
+        }
+      });
     })();
   </script>
 
